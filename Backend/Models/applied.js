@@ -16,6 +16,10 @@ const applySchema= new mongoose.Schema({
     location:{
         type:String,
         required:true
+    },
+    code:{
+        type:String,
+        required:true
     }
 })
 

@@ -4,6 +4,7 @@ import { Admin } from '../Models/Admin.js';
 import jwt from 'jsonwebtoken'
 import nodemailer from 'nodemailer'
 
+
 const router = express.Router();
 
 router.post('/signup', async (req, res) => {
@@ -123,5 +124,8 @@ router.post('/forgotpassword',async(req,res)=>{
     }
   
   })
-
+  router.post('/logout', (req, res) => {
+    res.clearCookie('token').json({ status: true, message: "Logged out successfully" });
+  });
+  
 export { router as AdminRouter };
